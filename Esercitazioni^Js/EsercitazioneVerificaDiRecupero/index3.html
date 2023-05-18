@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css.css">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Calcolatore tariffa parcheggio</h1>
+            <h2>
+                <pre>
+                     <link rel="stylesheet" href="css.css">       
+Creare una pagina html contenente uno script ed un bottone.
+
+Premendo il bottone deve essere richiesto all'utente di inserire un orario nel formato hh:mm;
+l'orario rappresenta l'ora in cui si è parcheggiata l'auto.
+Elaborare un algoritmo per calcolare la tariffa da pagare per il parcheggio
+tenendo conto di queste indicazioni:
+meno di mezz'ora: 0€
+meno di un'ora: 0.5€
+prima ora: 1€
+ore successive alla prima: 0.8€
+minuti residui dopo la prima ora: 0€
+Mostrare quindi tramite un alert la tariffa da pagare calcolando il tempo come 
+differenza tra l'orario inserito dall'utente e l'orario in cui è stato premuto il 
+pulsante. <br>
+<button class="Dimensioni" onclick="calcolaTariffa()">Calcola tariffa</button>
+                </pre>
+            </h2>
+    </center>   
+</body>
+                
+             
+
+<script>
+    function calcolaTariffa() { var oraInizio = new Date(); var oraFine = new Date(); var tariffa = 0; var minutiParcheggio = 0;
+        var inputOrario = prompt("Inserisci l'orario di parcheggio nel formato hh:mm");
+		var orarioParcheggio = inputOrario.split(":");
+		oraInizio.setHours(orarioParcheggio[0]);
+		oraInizio.setMinutes(orarioParcheggio[1]);
+
+		minutiParcheggio = Math.ceil(Math.abs(oraFine - oraInizio) / 60000);
+
+		if (minutiParcheggio <= 30) {
+			tariffa = 0;
+		} else if (minutiParcheggio <= 60) {
+			tariffa = 0.5;
+		} else {
+			tariffa = 1;
+			minutiParcheggio -= 60;
+			tariffa += Math.ceil(minutiParcheggio / 60) * 0.8;
+		}
+        
+		alert("Tariffa da pagare: " + tariffa + "€");
+	}
+</script>
+</html>

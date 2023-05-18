@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css.css">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <button id="btn1" class="Dimensioni">sercizio^1</button>
+        <button id="btn2" class="Dimensioni">sercizio^2</button>
+    </center>
+</body>
+<script>
+    kmArray = [
+   {
+      "data": "15/04/2023",
+      "km": 7.5,
+      "tempo": "01:15",
+      "meteo": "nuvoloso"
+   },
+   {
+      "data": "20/04/2023",
+      "km": 9.6,
+      "tempo": "01:54",
+      "meteo": "soleggiato"
+   },
+   {
+      "data": "23/04/2023",
+      "km": 4.5,
+      "tempo": "00:48",
+      "meteo": "pioggia"
+   },
+   {
+      "data": "20/01/2023",
+      "km": 6.66,
+      "tempo": "00:57",
+      "meteo": "freddo becco"
+   }
+]
+
+    btn1.onclick = function () {
+        kmArray.sort(function(a, b) {
+        let nameA = a.km;
+        let nameB = b.km;
+        return nameB - nameA;
+        });
+        console.log(kmArray)
+    };
+    
+    /*btn2 in js.js*/
+</script>
+<script src="js.js"></script>
+</html>

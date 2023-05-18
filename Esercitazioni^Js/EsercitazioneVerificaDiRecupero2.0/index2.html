@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Inserisci un numero da 1 a 10:</label>
+        <input type="text" id="numero">
+    <button onclick="aggiungiNumero()">Aggiungi</button>
+    <button onclick="aggiungiNumero2()">Aggiungi 'instampabile</button>
+</body>
+<script>
+    var numeri = [];
+    function aggiungiNumero() {
+    let numero = document.getElementById("numero").value;
+    /*permette di mettere l'alert nel caso in cui l'utente immette delle stringhe*/
+    if (numero === "" || isNaN(numero)) {
+        alert("Inserisci un numero valido da 1 a 10.");
+        return;
+    }
+    numero = parseInt(numero);
+    /*inserisce un range di numeri selezionabili*/
+    if (numero < 1 || numero > 10) {
+        alert("Inserisci un numero da 1 a 10.");
+        return;
+    }
+    /*credo stampi l'array aggiornato in consol*/
+    numeri.push(numero);
+    document.getElementById("numero").value = "";
+    console.log(numeri);
+    }
+
+
+    function aggiungiNumero2(){
+        
+    }
+</script>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css.css">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <button id="btn1" class="Dimensioni">sercizio^1</button>
+        <button id="btn2" class="Dimensioni">sercizio^2</button>
+        <button id="btn3EvenListener" class="Dimensioni">sercizio^3</button>
+    </center>
+</body>
+    <script>
+            let arrayAnimali = [
+        {
+            "nome": "cane",
+            "verso": "bau",
+            "zampe": 4,
+            "movimento": "cammina"
+        },
+        {
+            "nome": "rana",
+            "verso": "cra",
+            "zampe": 4,
+            "movimento": "salta"
+        },
+        {
+            "nome": "canarino",
+            "verso": "fiu",
+            "zampe": 2,
+            "movimento": "vola"
+        },
+        {
+            "nome": "serpente",
+            "verso": "fss",
+            "zampe": 0,
+            "movimento": "striscia"
+        }
+        ]
+
+        btn1.onclick = function () {
+        /*mette in ordine alfabetico l'array{dizionario}*/
+        arrayAnimali.sort((a, b) => {
+        let nameA = a.nome.toUpperCase();
+        let nameB = b.nome.toUpperCase();
+        if (nameA < nameB) {
+        return -1;
+        }
+        if (nameA > nameB) {
+            return 1;
+        }
+        return 0;
+        });
+        console.log(arrayAnimali)
+
+        /*stampa solo i valori del indice indicato*/
+        for (var i = 0; i < arrayAnimali.length; i++) {
+        console.log(arrayAnimali[i].nome); // Visualizza solo i nomi degli elementi dell'array
+        }
+    };
+
+
+
+    btn2.onclick = function () {
+        arrayAnimali.sort(function(a, b) {
+        let nameA = a.zampe;
+        let nameB = b.zampe;
+        return nameB - nameA;
+        });
+        console.log(arrayAnimali)
+    };
+/*
+    const btn3EvenListenerJS = document.getElementById('btn3EvenListener');
+    btn3EvenListenerJS.addEventListener('click', () => {
+        btn1.onclick = function () {
+        /*mette in ordine alfabetico l'array{dizionario}* /
+        arrayAnimali.sort((a, b) => {
+        let nameA = a.nome.toUpperCase();
+        let nameB = b.nome.toUpperCase();
+        if (nameA < nameB) {
+        return -1;
+        }
+        if (nameA > nameB) {
+            return 1;
+        }
+        return 0;
+        });
+        console.log(arrayAnimali)
+
+
+        const arrayAnimaliCACAC = Object.entries(arrayAnimali);
+        const firstValue = arrayAnimaliCACAC[0][1];
+        alert(firstValue);
+    };
+        });
+*/
+    </script>
+</html>

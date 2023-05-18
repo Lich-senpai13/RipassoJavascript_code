@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">stampa i nomi degli animali inordine alfabetico</button>
+    <button id="btn2">ordine decrescemte pernumerodi zampe</button>
+    <button id="btn3" onclick=""></button>  
+</body>
+
+<script>
+let animali =[
+   {
+      "nome": "cane",
+      "verso": "bau",
+      "zampe": 4,
+      "movimento": "cammina"
+   },
+   {
+      "nome": "rana",
+      "verso": "cra",
+      "zampe": 4,
+      "movimento": "salta"
+   },
+   {
+      "nome": "canarino",
+      "verso": "fiu",
+      "zampe": 2,
+      "movimento": "vola"
+   },
+   {
+      "nome": "serpente",
+      "verso": "fss",
+      "zampe": 0,
+      "movimento": "striscia"
+   }
+];
+
+function stampaAnimali(Ordina) {
+			for(let ricerca of Ordina) {
+				for (let proprieta in ricerca) {
+					console.log(proprieta + ": " + ricerca[proprieta]);
+				}
+				console.log("-------------------------------");
+			}
+		}
+
+btn1.onclick = function () {
+			console.log("");
+			console.log("stampa in ordine alfabetico gli animali: ");
+			stampaAnimali(animali.sort((a) => b.nome + a.nome));
+        };
+
+btn2.onclick = function () {
+			console.log("");
+			console.log("ordine decrescemte pernumerodi zampe");
+			stampaAnimali(animali.sort((a,b) => b.zampe - a.zampe));
+        }
+</script>
+</html>
