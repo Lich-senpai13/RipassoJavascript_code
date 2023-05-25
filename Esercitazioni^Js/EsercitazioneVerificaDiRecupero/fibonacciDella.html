@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let serie = Fibonacci();
+    
+    let n;
+    do  {
+        n = prompt("Inserisci un numero da 0 a 15");
+    } while (isNaN(n) && (n >= 0 && n <= 15))		
+    
+    alert(serie[n]);
+    
+    //questa funzione restituisce un array che contiene i numeri che costituiscono la serie di Fibonacci
+    function Fibonacci() {
+        let ret = [];
+        ret.push(0);
+        ret.push(1);
+        
+        //parto da 2 con il contatore perchè i primi 2 elementi (indice = 0 e indice = 1) li ho già inseriti
+        for (let i = 2; i <= 15; i++) {
+            numero = ret[i - 2] + ret[i - 1];
+            ret.push(numero);
+        }
+        
+        return ret;
+    }
+    
+</script>
+</html>

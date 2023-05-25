@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calciatori</title>
+</head>
+<body>
+    <button id = "button1">reti segnate</button>
+    <button id = "button2">partite giocate</button>
+    <button id = "button3">media gol</button>
+    <button id = "button4">primo calciatore</button>
+    <script>
+        let calciatori = [
+        {
+            "nome": "Pelè",
+            "gol": 757,
+            "partite": 816
+        },
+        {
+            "nome": "Maradona",
+            "gol": 353,
+            "partite": 695
+        },
+        {
+            "nome": "Messi",
+            "gol": 804,
+            "partite": 1022
+        },
+        {
+            "nome": "C. Ronaldo",
+            "gol": 835,
+            "partite": 1153
+        }
+        ];
+
+        function stampaCalciatori(elementi) {
+                    for (let elemento of elementi) {
+                        for (let proprieta in elemento) {
+                            console.log(proprieta + ": " + elemento[proprieta]);   
+                        }
+						console.log("----------------------------");
+                    }
+        }
+
+        button1.onclick = function () {
+			console.log("");
+            stampaCalciatori(calciatori.sort((a,b) => b.gol - a.gol));
+        }
+        //Da notare che "a" e "b" sono invertiti nella seconda funzione del bottone2 ["ciò Che permette di 
+        //fare alla rovescia"]
+        button2.onclick = function () {
+			console.log("");
+            stampaCalciatori(calciatori.sort((a,b) => a.partite - b.partite));
+        }
+        //fà la media tra i gol e le partite svolte e le stampa di conseguenza [dalla piu piccola alla più grande]
+        button3.onclick = function () {
+			console.log("");
+            stampaCalciatori(calciatori.sort((a,b) => (b.gol / b.partite) - (a.gol / a.partite)));
+        }
+
+        //permette di creare un evento sul bottone numero 3 ,E cambiare di conseguenza la sua proprità
+        //precedente facendo spuntare un alert suk primo calciatore in coda
+        button4.onclick = function () {
+			button3.addEventListener("click", function() { alert(calciatori[0].nome); });
+		}
+    </script>
+</body>
+</html>
